@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Cognitive Compiler Report</title>
+<style>
+body { font-family: Arial, sans-serif; background:#f4f6fb; color:#222; margin:0; padding:24px; }
+.card { background:white; border-radius:14px; padding:20px; margin-bottom:18px; box-shadow:0 4px 16px rgba(0,0,0,0.08); }
+h1, h2 { margin-top:0; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th, td { border:1px solid #d8deea; padding:10px; text-align:left; vertical-align:top; }
+th { background:#eef3ff; }
+.bar-row { display:flex; align-items:center; gap:12px; margin:10px 0; }
+.label { width:220px; font-size:14px; }
+.bar-wrap { flex:1; background:#eef2f7; border-radius:8px; height:18px; overflow:hidden; }
+.bar { height:18px; background:#5b8def; border-radius:8px; }
+.count { width:30px; text-align:right; }
+.small { color:#5c6470; }
+</style>
+</head>
+<body>
+<div class='card'>
+<h1>Human Cognitive Analysis of Coding via Error in Compiler</h1>
+<p class='small'><strong>Source File:</strong> samples\sample_errors.cog</p>
+<p class='small'><strong>Total Errors:</strong> 8</p>
+</div>
+<div class='card'>
+<h2>Symbol Table</h2>
+<table>
+<tr><th>Identifier</th><th>Type</th></tr>
+<tr><td>a</td><td>int</td></tr><tr><td>b</td><td>int</td></tr><tr><td>d</td><td>int</td></tr><tr><td>x</td><td>int</td></tr>
+</table>
+</div>
+<div class='card'>
+<h2>Error Distribution by Compiler Phase</h2>
+<div class='bar-row'><div class='label'>Lexical Analysis</div><div class='bar-wrap'><div class='bar' style='width:65px'></div></div><div class='count'>1</div></div>
+<div class='bar-row'><div class='label'>Syntax Analysis</div><div class='bar-wrap'><div class='bar' style='width:260px'></div></div><div class='count'>4</div></div>
+<div class='bar-row'><div class='label'>Semantic Analysis</div><div class='bar-wrap'><div class='bar' style='width:195px'></div></div><div class='count'>3</div></div>
+</div>
+<div class='card'>
+<h2>Cognitive Category Distribution</h2>
+<div class='bar-row'><div class='label'>Syntax Confusion</div><div class='bar-wrap'><div class='bar' style='width:130px'></div></div><div class='count'>1</div></div>
+<div class='bar-row'><div class='label'>Grammar Misunderstanding</div><div class='bar-wrap'><div class='bar' style='width:260px'></div></div><div class='count'>2</div></div>
+<div class='bar-row'><div class='label'>Logical Reasoning Error</div><div class='bar-wrap'><div class='bar' style='width:260px'></div></div><div class='count'>2</div></div>
+<div class='bar-row'><div class='label'>Structural Error</div><div class='bar-wrap'><div class='bar' style='width:130px'></div></div><div class='count'>1</div></div>
+<div class='bar-row'><div class='label'>Type System Confusion</div><div class='bar-wrap'><div class='bar' style='width:130px'></div></div><div class='count'>1</div></div>
+<div class='bar-row'><div class='label'>Scope Misunderstanding</div><div class='bar-wrap'><div class='bar' style='width:130px'></div></div><div class='count'>1</div></div>
+</div>
+<div class='card'>
+<h2>Error Type Frequency</h2>
+<div class='bar-row'><div class='label'>UNKNOWN_SYMBOL</div><div class='bar-wrap'><div class='bar' style='width:130px'></div></div><div class='count'>1</div></div>
+<div class='bar-row'><div class='label'>MISSING_SEMICOLON</div><div class='bar-wrap'><div class='bar' style='width:260px'></div></div><div class='count'>2</div></div>
+<div class='bar-row'><div class='label'>INVALID_EXPRESSION</div><div class='bar-wrap'><div class='bar' style='width:130px'></div></div><div class='count'>1</div></div>
+<div class='bar-row'><div class='label'>MISSING_RPAREN</div><div class='bar-wrap'><div class='bar' style='width:130px'></div></div><div class='count'>1</div></div>
+<div class='bar-row'><div class='label'>TYPE_MISMATCH</div><div class='bar-wrap'><div class='bar' style='width:130px'></div></div><div class='count'>1</div></div>
+<div class='bar-row'><div class='label'>UNDECLARED_VARIABLE</div><div class='bar-wrap'><div class='bar' style='width:130px'></div></div><div class='count'>1</div></div>
+<div class='bar-row'><div class='label'>DIVISION_BY_ZERO_LITERAL</div><div class='bar-wrap'><div class='bar' style='width:130px'></div></div><div class='count'>1</div></div>
+</div>
+<div class='card'>
+<h2>Detailed Error Log</h2>
+<table>
+<tr><th>Phase</th><th>Error Type</th><th>Line</th><th>Column</th><th>Message</th><th>Cognitive Category</th><th>Suggestion</th></tr>
+<tr><td>Lexical Analysis</td><td>UNKNOWN_SYMBOL</td><td>7</td><td>11</td><td>Unknown symbol '@'.</td><td>Syntax Confusion</td><td>Check the allowed operators, delimiters, and symbol usage in the grammar.</td></tr><tr><td>Syntax Analysis</td><td>MISSING_SEMICOLON</td><td>2</td><td>1</td><td>Expected ';' after declaration.</td><td>Grammar Misunderstanding</td><td>Terminate each declaration, assignment, and print statement with ';'.</td></tr><tr><td>Syntax Analysis</td><td>INVALID_EXPRESSION</td><td>5</td><td>12</td><td>Unexpected token ')' in expression.</td><td>Logical Reasoning Error</td><td>Build expressions using valid operands and operators only.</td></tr><tr><td>Syntax Analysis</td><td>MISSING_RPAREN</td><td>5</td><td>13</td><td>Expected ')' after expression.</td><td>Structural Error</td><td>Match every '(' with a corresponding ')'.</td></tr><tr><td>Syntax Analysis</td><td>MISSING_SEMICOLON</td><td>7</td><td>13</td><td>Expected ';' after declaration.</td><td>Grammar Misunderstanding</td><td>Terminate each declaration, assignment, and print statement with ';'.</td></tr><tr><td>Semantic Analysis</td><td>TYPE_MISMATCH</td><td>3</td><td>1</td><td>Cannot assign string value to int variable 'b'.</td><td>Type System Confusion</td><td>Match variable types with expression types, or use explicit conversion rules.</td></tr><tr><td>Semantic Analysis</td><td>UNDECLARED_VARIABLE</td><td>4</td><td>1</td><td>Variable 'c' is not declared.</td><td>Scope Misunderstanding</td><td>Declare the variable before using it in expressions or assignments.</td></tr><tr><td>Semantic Analysis</td><td>DIVISION_BY_ZERO_LITERAL</td><td>6</td><td>1</td><td>Division by zero detected in expression.</td><td>Logical Reasoning Error</td><td>Check denominator values before division.</td></tr>
+</table>
+</div>
+</body>
+</html>

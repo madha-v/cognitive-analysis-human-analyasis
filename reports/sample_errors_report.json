@@ -1,0 +1,163 @@
+{
+  "source": "samples\\sample_errors.cog",
+  "tokens": [
+    "Token(type='INT', value='int', line=1, column=1)",
+    "Token(type='IDENTIFIER', value='a', line=1, column=5)",
+    "Token(type='ASSIGN', value='=', line=1, column=7)",
+    "Token(type='NUMBER', value='10', line=1, column=9)",
+    "Token(type='FLOAT', value='float', line=2, column=1)",
+    "Token(type='IDENTIFIER', value='a', line=2, column=7)",
+    "Token(type='ASSIGN', value='=', line=2, column=9)",
+    "Token(type='NUMBER', value='2.5', line=2, column=11)",
+    "Token(type='SEMICOLON', value=';', line=2, column=14)",
+    "Token(type='INT', value='int', line=3, column=1)",
+    "Token(type='IDENTIFIER', value='b', line=3, column=5)",
+    "Token(type='ASSIGN', value='=', line=3, column=7)",
+    "Token(type='STRING', value='hello', line=3, column=9)",
+    "Token(type='SEMICOLON', value=';', line=3, column=16)",
+    "Token(type='IDENTIFIER', value='c', line=4, column=1)",
+    "Token(type='ASSIGN', value='=', line=4, column=3)",
+    "Token(type='IDENTIFIER', value='a', line=4, column=5)",
+    "Token(type='PLUS', value='+', line=4, column=7)",
+    "Token(type='NUMBER', value='5', line=4, column=9)",
+    "Token(type='SEMICOLON', value=';', line=4, column=10)",
+    "Token(type='PRINT', value='print', line=5, column=1)",
+    "Token(type='LPAREN', value='(', line=5, column=7)",
+    "Token(type='IDENTIFIER', value='a', line=5, column=8)",
+    "Token(type='PLUS', value='+', line=5, column=10)",
+    "Token(type='RPAREN', value=')', line=5, column=12)",
+    "Token(type='SEMICOLON', value=';', line=5, column=13)",
+    "Token(type='INT', value='int', line=6, column=1)",
+    "Token(type='IDENTIFIER', value='d', line=6, column=5)",
+    "Token(type='ASSIGN', value='=', line=6, column=7)",
+    "Token(type='NUMBER', value='8', line=6, column=9)",
+    "Token(type='DIVIDE', value='/', line=6, column=11)",
+    "Token(type='NUMBER', value='0', line=6, column=13)",
+    "Token(type='SEMICOLON', value=';', line=6, column=14)",
+    "Token(type='INT', value='int', line=7, column=1)",
+    "Token(type='IDENTIFIER', value='x', line=7, column=5)",
+    "Token(type='ASSIGN', value='=', line=7, column=7)",
+    "Token(type='NUMBER', value='5', line=7, column=9)",
+    "Token(type='NUMBER', value='2', line=7, column=13)",
+    "Token(type='SEMICOLON', value=';', line=7, column=14)"
+  ],
+  "symbol_table": {
+    "a": "int",
+    "b": "int",
+    "d": "int",
+    "x": "int"
+  },
+  "total_errors": 8,
+  "phase_counts": {
+    "Lexical Analysis": 1,
+    "Syntax Analysis": 4,
+    "Semantic Analysis": 3
+  },
+  "category_counts": {
+    "Syntax Confusion": 1,
+    "Grammar Misunderstanding": 2,
+    "Logical Reasoning Error": 2,
+    "Structural Error": 1,
+    "Type System Confusion": 1,
+    "Scope Misunderstanding": 1
+  },
+  "type_counts": {
+    "UNKNOWN_SYMBOL": 1,
+    "MISSING_SEMICOLON": 2,
+    "INVALID_EXPRESSION": 1,
+    "MISSING_RPAREN": 1,
+    "TYPE_MISMATCH": 1,
+    "UNDECLARED_VARIABLE": 1,
+    "DIVISION_BY_ZERO_LITERAL": 1
+  },
+  "errors": [
+    {
+      "phase": "Lexical Analysis",
+      "error_type": "UNKNOWN_SYMBOL",
+      "message": "Unknown symbol '@'.",
+      "line": 7,
+      "column": 11,
+      "lexeme": "@",
+      "cognitive_category": "Syntax Confusion",
+      "cognitive_reason": "The programmer may be unsure about valid symbols of the language.",
+      "suggestion": "Check the allowed operators, delimiters, and symbol usage in the grammar."
+    },
+    {
+      "phase": "Syntax Analysis",
+      "error_type": "MISSING_SEMICOLON",
+      "message": "Expected ';' after declaration.",
+      "line": 2,
+      "column": 1,
+      "lexeme": "float",
+      "cognitive_category": "Grammar Misunderstanding",
+      "cognitive_reason": "Statement termination rules are not being followed consistently.",
+      "suggestion": "Terminate each declaration, assignment, and print statement with ';'."
+    },
+    {
+      "phase": "Syntax Analysis",
+      "error_type": "INVALID_EXPRESSION",
+      "message": "Unexpected token ')' in expression.",
+      "line": 5,
+      "column": 12,
+      "lexeme": ")",
+      "cognitive_category": "Logical Reasoning Error",
+      "cognitive_reason": "The expression formation is incomplete or uses unexpected tokens.",
+      "suggestion": "Build expressions using valid operands and operators only."
+    },
+    {
+      "phase": "Syntax Analysis",
+      "error_type": "MISSING_RPAREN",
+      "message": "Expected ')' after expression.",
+      "line": 5,
+      "column": 13,
+      "lexeme": ";",
+      "cognitive_category": "Structural Error",
+      "cognitive_reason": "The expression grouping is incomplete, showing bracket balancing difficulty.",
+      "suggestion": "Match every '(' with a corresponding ')'."
+    },
+    {
+      "phase": "Syntax Analysis",
+      "error_type": "MISSING_SEMICOLON",
+      "message": "Expected ';' after declaration.",
+      "line": 7,
+      "column": 13,
+      "lexeme": "2",
+      "cognitive_category": "Grammar Misunderstanding",
+      "cognitive_reason": "Statement termination rules are not being followed consistently.",
+      "suggestion": "Terminate each declaration, assignment, and print statement with ';'."
+    },
+    {
+      "phase": "Semantic Analysis",
+      "error_type": "TYPE_MISMATCH",
+      "message": "Cannot assign string value to int variable 'b'.",
+      "line": 3,
+      "column": 1,
+      "lexeme": "b",
+      "cognitive_category": "Type System Confusion",
+      "cognitive_reason": "The assigned value type does not align with the declared variable type.",
+      "suggestion": "Match variable types with expression types, or use explicit conversion rules."
+    },
+    {
+      "phase": "Semantic Analysis",
+      "error_type": "UNDECLARED_VARIABLE",
+      "message": "Variable 'c' is not declared.",
+      "line": 4,
+      "column": 1,
+      "lexeme": "c",
+      "cognitive_category": "Scope Misunderstanding",
+      "cognitive_reason": "The programmer is using a name before establishing it in the symbol table.",
+      "suggestion": "Declare the variable before using it in expressions or assignments."
+    },
+    {
+      "phase": "Semantic Analysis",
+      "error_type": "DIVISION_BY_ZERO_LITERAL",
+      "message": "Division by zero detected in expression.",
+      "line": 6,
+      "column": 1,
+      "lexeme": "/",
+      "cognitive_category": "Logical Reasoning Error",
+      "cognitive_reason": "The expression contains a mathematically invalid operation.",
+      "suggestion": "Check denominator values before division."
+    }
+  ]
+}
