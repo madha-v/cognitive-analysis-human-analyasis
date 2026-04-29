@@ -1,0 +1,22 @@
+[project]
+name = "cognitive-analysis-human-analyasis"
+version = "0.1.0"
+description = "Human Cognitive Analysis of Coding via Error in Compiler"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "langchain",
+    "langchain-community",
+    "langchain-core",
+    "langchain-groq",
+    "langchain-google-genai",
+    "chromadb",
+    "python-dotenv",
+    "sentence-transformers>=5.4.1",
+    "langchain-huggingface>=1.2.2",
+]
+
+[tool.uv]
+dev-dependencies = []
